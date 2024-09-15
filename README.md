@@ -10,7 +10,6 @@ available on a public Git repository and is designed for future extensibility, i
 expiration dates.
 
 
-
 API Endpoints
 
 1. Create a New Coupon Cart-wise
