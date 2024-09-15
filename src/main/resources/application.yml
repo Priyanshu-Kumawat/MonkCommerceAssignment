@@ -1,0 +1,10 @@
+spring:
+  application:
+   name: couponSystem
+
+  data:
+    mongodb:
+      uri: mongodb+srv://priyanshukumawat25:Yu4kVe6fSsvfBYgW@couponsystem.t3vk6.mongodb.net/?retryWrites=true&w=majority&appName=CouponSystem
+      database: CouponSystem
+#      auto-index-creation: true
+

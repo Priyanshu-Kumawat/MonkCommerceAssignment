@@ -1,0 +1,214 @@
+{
+	"info": {
+		"_postman_id": "45e70f8a-0a14-4a71-93c6-0a2faf6dad16",
+		"name": "CouponSystem",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22333969"
+	},
+	"item": [
+		{
+			"name": "GetApplicableCoupons",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"items\": [\r\n{\"productId\": 1, \"quantity\": 6, \"price\": 50.0}, // Product X\r\n{\"productId\": 2, \"quantity\": 3, \"price\": 30.0}, // Product Y\r\n{\"productId\": 3, \"quantity\": 2, \"price\": 25.0} // Product Z\r\n]\r\n}  ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/coupons/applicable-coupons",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"coupons",
+						"applicable-coupons"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ApplyCouponOnCartById",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"items\": [\r\n{\"productId\": 1, \"quantity\": 6, \"price\": 50.0}, // Product X\r\n{\"productId\": 2, \"quantity\": 3, \"price\": 30.0}, // Product Y\r\n{\"productId\": 3, \"quantity\": 2, \"price\": 25.0} // Product Z\r\n]\r\n}  ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/coupons/applicable-coupons",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"coupons",
+						"applicable-coupons"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetAllCoupons",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "GetCouponById",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateCouponById",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/coupons/{:id}",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"coupons",
+						"{:id}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteCouponById",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/coupons/{:id}",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"coupons",
+						"{:id}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddCartCoupon",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"type\": \"CART_WISE\",\r\n    \"details\": {\r\n        \"threshold\": 100,\r\n        \"discount\": 10\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/coupons",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"coupons"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddProductCoupon",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"type\": \"PRODUCT_WISE\",\r\n    \"details\": {\r\n        \"productId\": 3,\r\n        \"discount\": 5\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/coupons",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"coupons"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddBxGyCoupon",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"type\": \"BXGY\",\r\n    \"details\": {\r\n        \"buyProducts\": [\r\n            {\r\n                \"productId\": 1,\r\n                \"quantity\": 3\r\n            },\r\n            {\r\n                \"productId\": 2,\r\n                \"quantity\": 3\r\n            }\r\n        ],\r\n        \"getProducts\": [\r\n            {\r\n                \"productId\": 3,\r\n                \"quantity\": 1\r\n            }\r\n        ],\r\n        \"repetitionLimit\": 2\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/coupons",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"coupons"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
